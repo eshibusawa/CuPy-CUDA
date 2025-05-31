@@ -1,0 +1,15 @@
+name: CuPy-CUDA
+channels:
+  - conda-forge
+dependencies:
+  - cudatoolkit=11.8.0
+  - cupy
+  - ipython
+  - jupyter
+  - matplotlib
+  - nbconvert
+  - nose
+  - pip
+  - py-opencv
+  - python=3.10.*
+prefix: /path/to/your/envs/CuPy-CUDA
