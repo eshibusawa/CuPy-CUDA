@@ -14,3 +14,7 @@ Each notebook progressively introduces core CUDA concepts and demonstrates their
 * [03_stencil_patterns_with_shared_memory.ipynb](./03_stencil_patterns_with_shared_memory.ipynb)
     Explore the implementation of stencil patterns, focusing on performance-critical GPU memory concepts.
     This notebook details how to use Shared Memory for block-level cooperation and Warp-level cooperation with shuffle instructions for efficient inter-thread communication.
+
+* [04_implementing_advanced_parallel_patterns_with_CUB.ipynb](./04_implementing_advanced_parallel_patterns_with_CUB.ipynb)
+    Explore the implementation of advanced parallel patterns using the CUB library.
+    This notebook demonstrates Reduction (e.g., vector normalization) and Scan (e.g., prefix sum), highlighting efficient memory access strategies (striped vs. direct loads) essential for GPU performance.
