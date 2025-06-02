@@ -18,3 +18,13 @@ Each notebook progressively introduces core CUDA concepts and demonstrates their
 * [04_implementing_advanced_parallel_patterns_with_CUB.ipynb](./04_implementing_advanced_parallel_patterns_with_CUB.ipynb)
     Explore the implementation of advanced parallel patterns using the CUB library.
     This notebook demonstrates Reduction (e.g., vector normalization) and Scan (e.g., prefix sum), highlighting efficient memory access strategies (striped vs. direct loads) essential for GPU performance.
+
+# Appendix: Practical Applications
+
+You might be wondering what you can actually build with the knowledge gained from these notebooks.
+The skills you'll acquire are directly applicable to a wide range of real-world, high-performance computing problems.
+
+By mastering just Notebooks 01 (Basic Array Operations) and 02 (Basic Texture Sampling), you'll gain the foundational skills to implement high-speed stereo vision algorithms ([JBF-Stereo](https://github.com/eshibusawa/JBF-Stereo) and [VFS](https://github.com/eshibusawa/VFS-Python)).
+These notebooks lay the groundwork for efficient data processing and precise memory access, which are critical for various real-time computer vision tasks.
+Furthermore, once you understand CUB's powerful prefix sum operations from Notebook 04, you'll be well-equipped to tackle advanced applications like real-time object detection ([Stixel-World](https://github.com/eshibusawa/Stixel-World-Python)), as seen in systems that derive object boundaries from depth information.
+This journey through CuPy, CUDA, and CUB can significantly enhance your ability to develop high-performance solutions.
