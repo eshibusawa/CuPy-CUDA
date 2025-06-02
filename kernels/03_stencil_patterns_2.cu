@@ -4,8 +4,8 @@ namespace cg = cooperative_groups;
 extern "C" __global__ void movingAverage2CTAWarp(float *y,
   const float *__restrict__ x)
 {
-	auto cta = cg::this_thread_block();
-	const int ctaIndex = cta.thread_rank();
+  auto cta = cg::this_thread_block();
+  const int ctaIndex = cta.thread_rank();
   if (ctaIndex >= STENCIL_PATTERNS_2_LENGTH)
   {
     return;
