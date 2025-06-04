@@ -4,7 +4,10 @@ This repository provides a series of Jupyter notebooks designed to help you get 
 Each notebook progressively introduces core CUDA concepts and demonstrates their practical application with CuPy's intuitive interface.
 
 ## Before you begin:
-Before working through the notebooks, we recommend reviewing the following supplemental materials if you are unfamiliar with parallel computation patterns itself:
+Before working through the notebooks, we recommend reviewing the following supplemental materials if you are unfamiliar with CUDA and parallel computation patterns itself:
+
+* [Supplement: Introduction to CUDA Programming and GPU Architecture](./00_cuda_programming_and_gpu_architecture.md)
+  (Offers a comprehensive explanation of GPU and CPU architectural differences, the CUDA programming model—including grids, blocks, threads, and warps—and the GPU memory hierarchy, providing essential context for understanding and optimizing practical CUDA applications.)
 
 * [Supplement: Introduction to Basic and Advanced Parallel Computation Patterns](./00_basic_and_advanced_parallel_computation_patterns.md)
   (Provides an overview of four fundamental parallel patterns—map, stencil, reduction, and scan—and explains their classification as "basic" or "advanced.")
