@@ -9,7 +9,7 @@ In this document, we'll explore four essential patterns commonly used in paralle
 
 <figure style="background-color: white; padding: 15px; display: inline-block;">
   <img src="images/00_map.svg" width="300px" alt="map pattern">
-  <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em; color: \#555;">
+  <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em; color: #555;">
     Fig. 1: the map pattern
   </figcaption>
 </figure>
@@ -23,7 +23,7 @@ As Figure 1 illustrates, the map pattern is a cornerstone of parallel computing.
 
 <figure style="background-color: white; padding: 15px; display: inline-block;">
   <img src="images/00_stencil.svg" width="300px" alt="stencil pattern">
-  <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em; color: \#555;">
+  <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em; color: #555;">
     Fig. 2: the stencil pattern
   </figcaption>
 </figure>
@@ -37,13 +37,13 @@ As Figure 2 demonstrates, the stencil pattern generalizes the map pattern by int
 
 <figure style="background-color: white; padding: 15px; display: inline-block;">
   <img src="images/00_reduction_serial.svg" width="300px" alt="serial execution of the scan pattern">
-  <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em; color: \#555;">
+  <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em; color: #555;">
     Fig. 3: serial execution of the reduction pattern
   </figcaption>
 </figure>
 <figure style="background-color: white; padding: 15px; display: inline-block;">
   <img src="images/00_reduction_paralell.svg" width="300px" alt="paralell execution of the scan pattern">
-  <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em; color: \#555;">
+  <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em; color: #555;">
     Fig. 4: paralell execution of the reduction pattern
   </figcaption>
 </figure>
@@ -57,13 +57,13 @@ Reduction is essential for summarizing large datasets and computing global stati
 
 <figure style="background-color: white; padding: 15px; display: inline-block;">
   <img src="images/00_scan_serial.svg" width="300px" alt="serial execution of the scan pattern">
-  <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em; color: \#555;">
+  <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em; color: #555;">
     Fig. 5: serial execution of the scan pattern
   </figcaption>
 </figure>
 <figure style="background-color: white; padding: 15px; display: inline-block;">
   <img src="images/00_scan_paralell.svg" width="300px" alt="paralell execution of the scan pattern">
-  <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em; color: \#555;">
+  <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em; color: #555;">
     Fig. 6: paralell execution of the scan pattern
   </figcaption>
 </figure>
