@@ -1,9 +1,22 @@
 # Introduction to CUDA Programming and GPU Architecture
 This document provides a foundational overview of NVIDIA GPU architecture and the CUDA programming model. Understanding these core concepts is essential for effectively developing high-performance parallel applications.
 
+The figure in this document is reproduced from [1], an official NVIDIA technical document.
+
 ## Differences Between GPU and CPU Architectures
 ### Parallel Processing Model
-NVIDIA GPUs are designed with a large number of simple cores, specialized for data-parallel processing. They operate under the SIMT (Single Instruction, Multiple Threads) architecture, where threads are grouped into units called warps—typically 32 threads each. All threads in a warp start together at the same program address and execute one common instruction at a time. This allows the GPU to process thousands of threads simultaneously, maximizing throughput for data-parallel tasks. In contrast, CPUs have a small number of complex cores optimized for sequential execution and sophisticated control flow.
+NVIDIA GPUs are designed with a large number of simple cores, specialized for data-parallel processing. As depicted in Fig. 1, their architecture prioritizes a substantial allocation of computational resources (green), while intentionally limiting the space for cache (purple) and control (yellow) elements. They operate under the SIMT (Single Instruction, Multiple Threads) architecture, where threads are grouped into units called warps—typically 32 threads each. All threads in a warp start together at the same program address and execute one common instruction at a time. This allows the GPU to process thousands of threads simultaneously, maximizing throughput for data-parallel tasks. In contrast, CPUs have a small number of complex cores optimized for sequential execution and sophisticated control flow.
+A modern NVIDIA GPU is organized into multiple Streaming Multiprocessors (SMs).
+Each SM contains many lightweight processing units called CUDA Cores, which execute arithmetic and logic operations for individual threads.
+The SM is responsible for scheduling and managing warps (groups of 32 threads) and provides access to on-chip resources such as shared memory and registers.
+By grouping many CUDA Cores within each SM and deploying multiple SMs on a chip, NVIDIA GPUs can efficiently process thousands of threads in parallel.
+
+<figure style="background-color: white; padding: 15px; display: inline-block;">
+  <img src="images/00_cpu_vs_gpu.svg" width="600px" alt="CPU vs. GPU">
+  <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em; color: #555;">
+    Fig. 1: an example distribution of chip resources for a CPU versus a GPU [1]
+  </figcaption>
+</figure>
 
 ### Memory Latency
 GPUs hide memory latency by maintaining many active warps per multiprocessor. When a warp is stalled waiting for data from memory, the scheduler can quickly switch to another ready warp, keeping the functional units busy and hiding latency. CPUs, however, mainly rely on large multi-level caches and speculative execution to reduce the impact of memory latency.
@@ -13,8 +26,16 @@ GPUs are inherently suited for data-parallel workloads, applying the same operat
 
 ### Control Flow and Performance Impact of Divergence
 While early GPUs had limited control flow capabilities, modern GPUs (such as those based on the Turing and Volta architectures) support more flexible branching and looping. However, when threads within a warp encounter a data-dependent branch and take different execution paths (a phenomenon called "warp divergence"), the warp must execute each path serially, disabling threads not taking the current path. This increases the total number of instructions executed and reduces overall throughput. For best performance, it is essential to minimize divergence within a warp—for example, by ensuring that conditional statements are structured so all threads in a warp follow the same path when possible.
+As illustrated in Fig. 2, warp divergence occurs when threads within a warp follow different execution paths due to branching, resulting in serialized execution.
 
 The SIMT architecture enables each thread to have its own program counter and register state, allowing independent branching on modern GPUs (Volta architecture and later). However, full efficiency is achieved when all threads in a warp execute the same instruction. The number of active warps per multiprocessor is also critical for hiding both arithmetic and memory latencies. If too few warps are resident (for example, due to high register or shared memory usage), the GPU may not be able to fully hide latency, reducing performance.
+
+<figure style="background-color: white; padding: 15px; display: inline-block;">
+  <img src="images/00_warp_execution_and_divergence.svg" width="600px" alt="Warp execution and divergence diagram">
+  <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em; color: #555;">
+    Fig. 2: example of warp execution and divergence in a SIMT architecture
+  </figcaption>
+</figure>
 
 ## CUDA Architecture
 ### Heterogeneous Computing
@@ -41,6 +62,15 @@ Recent CUDA architectures introduce the concept of thread block clusters, which 
 ## CUDA Memory Hierarchy and Access Optimization
 ### Overview of the Memory Hierarchy
 CUDA-enabled GPUs feature a complex memory hierarchy, including global memory, local memory, shared memory, registers, constant memory, and texture/surface memory. Each type has different size, speed, and usage characteristics.
+In Fig. 3, the arrangement of CUDA Cores and Streaming Multiprocessors (SMs) is also illustrated.
+This highlights how these processing units interact with the various levels of the GPU memory hierarchy to enable efficient parallel computation.
+
+<figure style="background-color: white; padding: 15px; display: inline-block;">
+  <img src="images/00_memory_hierarchy.svg" width="600px" alt="memory hierarchy, CUDA cores and streaming multiprocessor">
+  <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em; color: #555;">
+    Fig. 3: memory hierarchy, CUDA cores and streaming multiprocessor
+  </figcaption>
+</figure>
 
 ### Global Memory
 Global memory resides on the device and is the largest but slowest memory space. It is accessed via memory transactions of 32, 64, or 128 bytes, which must be naturally aligned. To maximize throughput, it is essential to use optimal access patterns, ensure data types are properly aligned and sized, and pad arrays, especially for two-dimensional arrays whose width should be a multiple of the warp size.
@@ -62,6 +92,15 @@ Texture and surface memory are cached in the texture cache, which is optimized f
 
 ### Coalesced Access to Global Memory
 Coalesced access to global memory is a crucial performance consideration in CUDA programming. For devices with compute capability 6.0 or higher, the device combines memory operations from threads in a warp into as few 32-byte transactions as possible, depending on access patterns. Fully coalesced accesses are achieved when threads access adjacent, properly aligned addresses; misaligned or strided accesses increase transaction count and reduce bandwidth. Developers should always strive for coalesced access patterns, such as having each thread in a warp access consecutive elements of a 32-byte aligned array.
+
+As illustrated in Fig. 4, coalesced access occurs when threads in a warp access consecutive memory addresses, while non-coalesced access results from threads accessing non-adjacent locations, leading to inefficient memory transactions.
+
+<figure style="background-color: white; padding: 15px; display: inline-block;">
+  <img src="images/00_coalesced_access.svg" width="450px" alt="Coalesced and non-coalesced memory access diagram">
+  <figcaption style="text-align: center; margin-top: 10px; font-size: 0.9em; color: #555;">
+    Fig. 4: example of coalesced and non-coalesced memory access in a SIMT architecture
+  </figcaption>
+</figure>
 
 ## References
 1. NVIDIA Corporation. (2024). [*CUDA C++ Programming Guide*.](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html)

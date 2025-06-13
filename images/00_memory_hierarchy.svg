@@ -1,0 +1,92 @@
+<svg width="1300" height="1060" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker
+      id="arrow-up"
+      markerWidth="10"
+      markerHeight="10"
+      refX="5"
+      refY="5"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M 0 5 L 10 0 L 7 5 L 10 10 Z" fill="#888" />
+    </marker>
+    <marker
+      id="arrow-down"
+      markerWidth="10"
+      markerHeight="10"
+      refX="5"
+      refY="5"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M 0 5 L 10 0 L 7 5 L 10 10 Z" fill="#888" transform="rotate(180,5,5)" />
+    </marker>
+
+    <g id="register_and_processor">
+      <rect x="0" y="30" width="160" height="80" fill="#8e44ad" stroke="#6e248d" stroke-width="1" />
+      <text x="80" y="75" text-anchor="middle" font-size="24" fill="white">Registers</text>
+
+      <rect x="0" y="110" width="210" height="120" fill="#6ab04c" stroke="#4a8c2c" stroke-width="1" />
+      <text x="110" y="180" text-anchor="middle" font-size="24" fill="white">CUDA Core</text>
+
+      <line x1="185" x2="185" y1="15" y2="95" stroke="#888" stroke-width="3"
+        marker-start="url(#arrow-up)" marker-end="url(#arrow-down)" />
+
+      <line x1="125" x2="125" y1="245" y2="380" stroke="#888" stroke-width="3"
+        marker-start="url(#arrow-up)" />
+
+      <line x1="155" x2="155" y1="245" y2="280" stroke="#888" stroke-width="3"
+        marker-start="url(#arrow-up)" />
+    </g>
+
+    <g id="cores_and_instruction_unit">
+      <rect x="0" y="0" width="850" height="80" fill="#8e44ad" stroke="#6e248d" stroke-width="1" />
+      <text x="425" y="50" text-anchor="middle" font-size="24" fill="white">Shared Memory</text>
+
+      <rect x="5" y="230" width="1050" height="40" fill="#a8e69d" stroke="#88c67d" stroke-width="1" />
+
+      <rect x="0" y="360" width="1060" height="80" fill="#3498db" stroke="#1478bb" stroke-width="1" />
+      <text x="1000" y="390" text-anchor="middle" font-size="24" fill="white">Constant</text>
+      <text x="1000" y="430" text-anchor="middle" font-size="24" fill="white">Cache</text>
+      <rect x="0" y="460" width="1060" height="80" fill="#3498db" stroke="#1478bb" stroke-width="1" />
+      <text x="1000" y="490" text-anchor="middle" font-size="24" fill="white">Texture</text>
+      <text x="1000" y="530" text-anchor="middle" font-size="24" fill="white">Cache</text>
+
+      <rect x="860" y="110" width="200" height="200" fill="#e6a700" stroke="#da9500" stroke-width="1" />
+      <text x="960" y="210" text-anchor="middle" font-size="24" fill="white">Instruction</text>
+      <text x="960" y="240" text-anchor="middle" font-size="24" fill="white">Unit</text>
+
+      <use href="#register_and_processor" x="0" y="80"/>
+      <use href="#register_and_processor" x="220" y="80"/>
+      <use href="#register_and_processor" x="640" y="80"/>
+    </g>
+
+    <g id="streaming_multi_processor">
+      <rect x="0" y="0" width="1120" height="630" fill="#f9ca24" stroke="#d9aa04" stroke-width="1" />
+      <text x="170" y="40" text-anchor="middle" font-size="24" fill="555">Streaming Multi Processor</text>
+      <use href="#cores_and_instruction_unit" x="30" y="60"/>
+    </g>
+  </defs>
+
+  <rect x="0" y="0" width="1280" height="860" fill="#ffeeba" stroke="#eebb9a" stroke-width="1" />
+  <text x="60" y="40" text-anchor="middle" font-size="24" fill="#555">Device</text>
+  <use href="#streaming_multi_processor" x="110" y="60"/>
+  <use href="#streaming_multi_processor" x="85" y="115"/>
+  <use href="#streaming_multi_processor" x="60" y="170"/>
+
+  <rect x="0" y="900" width="1280" height="140" fill="#e67e22" stroke="#c65e02" stroke-width="1" />
+  <text x="110" y="940" text-anchor="middle" font-size="24" fill="white">Global Memory</text>
+  <line x1="185" x2="185" y1="555" y2="885" stroke="#888" stroke-width="3"
+    marker-start="url(#arrow-up)" marker-end="url(#arrow-down)" />
+  <line x1="405" x2="405" y1="555" y2="885" stroke="#888" stroke-width="3"
+    marker-start="url(#arrow-up)" marker-end="url(#arrow-down)" />
+  <line x1="825" x2="825" y1="555" y2="885" stroke="#888" stroke-width="3"
+    marker-start="url(#arrow-up)" marker-end="url(#arrow-down)" />
+
+  <line x1="965" x2="965" y1="685" y2="900" stroke="#888" stroke-width="3"
+    marker-start="url(#arrow-up)" />
+  <line x1="995" x2="995" y1="785" y2="900" stroke="#888" stroke-width="3"
+    marker-start="url(#arrow-up)" />
+
+</svg>
