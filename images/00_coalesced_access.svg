@@ -1,100 +1,109 @@
-<svg width="620" height="460" xmlns="http://www.w3.org/2000/svg">
-
-  <text x="30" y="38" font-size="26" font-weight="bold" fill="black">Coalesced vs. Non-coalesced Access</text>
-
-  <rect x="30" y="50" width="560" height="160" fill="#e0f2f7" stroke="#3498db" stroke-width="1.5" rx="10"/>
-  <text x="50" y="75" font-size="18" font-weight="bold" fill="#3498db">Coalesced Access (Efficient)</text>
-  <text x="50" y="98" font-size="18" fill="#555">Each thread accesses a consecutive memory address</text>
-
-  <g>
-    <rect x="120" y="115" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
-    <text x="137" y="131" font-size="12" text-anchor="middle" fill="#3498db">T0</text>
-    <rect x="170" y="115" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
-    <text x="187" y="131" font-size="12" text-anchor="middle" fill="#3498db">T1</text>
-    <rect x="220" y="115" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
-    <text x="237" y="131" font-size="12" text-anchor="middle" fill="#3498db">T2</text>
-    <rect x="270" y="115" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
-    <text x="287" y="131" font-size="12" text-anchor="middle" fill="#3498db">T3</text>
-    <rect x="320" y="115" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
-    <text x="337" y="131" font-size="12" text-anchor="middle" fill="#3498db">T4</text>
-    <rect x="370" y="115" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
-    <text x="387" y="131" font-size="12" text-anchor="middle" fill="#3498db">T5</text>
-    <rect x="420" y="115" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
-    <text x="437" y="131" font-size="12" text-anchor="middle" fill="#3498db">T6</text>
-    <rect x="470" y="115" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
-    <text x="487" y="131" font-size="12" text-anchor="middle" fill="#3498db">T7</text>
-  </g>
-  <g>
-    <rect x="120" y="170" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
-    <text x="137" y="186" font-size="12" text-anchor="middle" fill="#3498db">0</text>
-    <rect x="170" y="170" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
-    <text x="187" y="186" font-size="12" text-anchor="middle" fill="#3498db">1</text>
-    <rect x="220" y="170" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
-    <text x="237" y="186" font-size="12" text-anchor="middle" fill="#3498db">2</text>
-    <rect x="270" y="170" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
-    <text x="287" y="186" font-size="12" text-anchor="middle" fill="#3498db">3</text>
-    <rect x="320" y="170" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
-    <text x="337" y="186" font-size="12" text-anchor="middle" fill="#3498db">4</text>
-    <rect x="370" y="170" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
-    <text x="387" y="186" font-size="12" text-anchor="middle" fill="#3498db">5</text>
-    <rect x="420" y="170" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
-    <text x="437" y="186" font-size="12" text-anchor="middle" fill="#3498db">6</text>
-    <rect x="470" y="170" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
-    <text x="487" y="186" font-size="12" text-anchor="middle" fill="#3498db">7</text>
-  </g>
-  <g stroke="#3498db" stroke-width="2">
-    <line x1="137" y1="137" x2="137" y2="165" marker-end="url(#arrow_blue)"/>
-    <line x1="187" y1="137" x2="187" y2="165" marker-end="url(#arrow_blue)"/>
-    <line x1="237" y1="137" x2="237" y2="165" marker-end="url(#arrow_blue)"/>
-    <line x1="287" y1="137" x2="287" y2="165" marker-end="url(#arrow_blue)"/>
-    <line x1="337" y1="137" x2="337" y2="165" marker-end="url(#arrow_blue)"/>
-    <line x1="387" y1="137" x2="387" y2="165" marker-end="url(#arrow_blue)"/>
-    <line x1="437" y1="137" x2="437" y2="165" marker-end="url(#arrow_blue)"/>
-    <line x1="487" y1="137" x2="487" y2="165" marker-end="url(#arrow_blue)"/>
+<svg width="580" height="390" xmlns="http://www.w3.org/2000/svg">
+  <g id="coalesced_access" transform="translate(0,00)">
+    <rect x="0" y="0" width="560" height="160" fill="#e0f2f7" stroke="#3498db" stroke-width="1.5" rx="10"/>
+    <text x="20" y="25" font-size="18" font-weight="bold" fill="black">Coalesced Access (Efficient)</text>
+    <text x="20" y="48" font-size="18" fill="#555">Each thread accesses a consecutive memory address</text>
+    <g>
+      <rect x="90" y="65" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
+      <text x="107" y="81" font-size="12" text-anchor="middle" fill="#3498db">T0</text>
+      <rect x="140" y="65" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
+      <text x="157" y="81" font-size="12" text-anchor="middle" fill="#3498db">T1</text>
+      <rect x="190" y="65" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
+      <text x="207" y="81" font-size="12" text-anchor="middle" fill="#3498db">T2</text>
+      <rect x="240" y="65" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
+      <text x="257" y="81" font-size="12" text-anchor="middle" fill="#3498db">T3</text>
+      <rect x="290" y="65" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
+      <text x="307" y="81" font-size="12" text-anchor="middle" fill="#3498db">T4</text>
+      <rect x="340" y="65" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
+      <text x="357" y="81" font-size="12" text-anchor="middle" fill="#3498db">T5</text>
+      <rect x="390" y="65" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
+      <text x="407" y="81" font-size="12" text-anchor="middle" fill="#3498db">T6</text>
+      <rect x="440" y="65" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
+      <text x="457" y="81" font-size="12" text-anchor="middle" fill="#3498db">T7</text>
+    </g>
+    <g>
+      <rect x="90" y="120" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
+      <text x="107" y="136" font-size="12" text-anchor="middle" fill="#3498db">0</text>
+      <rect x="140" y="120" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
+      <text x="157" y="136" font-size="12" text-anchor="middle" fill="#3498db">1</text>
+      <rect x="190" y="120" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
+      <text x="207" y="136" font-size="12" text-anchor="middle" fill="#3498db">2</text>
+      <rect x="240" y="120" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
+      <text x="257" y="136" font-size="12" text-anchor="middle" fill="#3498db">3</text>
+      <rect x="290" y="120" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
+      <text x="307" y="136" font-size="12" text-anchor="middle" fill="#3498db">4</text>
+      <rect x="340" y="120" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
+      <text x="357" y="136" font-size="12" text-anchor="middle" fill="#3498db">5</text>
+      <rect x="390" y="120" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
+      <text x="407" y="136" font-size="12" text-anchor="middle" fill="#3498db">6</text>
+      <rect x="440" y="120" width="34" height="22" fill="#fff" stroke="#3498db" stroke-width="1.2"/>
+      <text x="457" y="136" font-size="12" text-anchor="middle" fill="#3498db">7</text>
+    </g>
+    <g stroke="#3498db" stroke-width="2">
+      <line x1="107" y1="87" x2="107" y2="115" marker-end="url(#arrow_blue)"/>
+      <line x1="157" y1="87" x2="157" y2="115" marker-end="url(#arrow_blue)"/>
+      <line x1="207" y1="87" x2="207" y2="115" marker-end="url(#arrow_blue)"/>
+      <line x1="257" y1="87" x2="257" y2="115" marker-end="url(#arrow_blue)"/>
+      <line x1="307" y1="87" x2="307" y2="115" marker-end="url(#arrow_blue)"/>
+      <line x1="357" y1="87" x2="357" y2="115" marker-end="url(#arrow_blue)"/>
+      <line x1="407" y1="87" x2="407" y2="115" marker-end="url(#arrow_blue)"/>
+      <line x1="457" y1="87" x2="457" y2="115" marker-end="url(#arrow_blue)"/>
+    </g>
   </g>
 
-  <rect x="30" y="230" width="560" height="200" fill="#fdebd0" stroke="#e67e22" stroke-width="1.5" rx="10"/> <text x="50" y="255" font-size="18" font-weight="bold" fill="#e67e22">Non-coalesced Access (Inefficient)</text> <text x="50" y="278" font-size="18" fill="#555">Threads access non-adjacent memory addresses,</text> <text x="50" y="298" font-size="18" fill="#555">causing multiple transactions</text> <g>
-    <rect x="120" y="305" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/> <text x="137" y="321" font-size="12" text-anchor="middle" fill="#e67e22">T0</text> <rect x="170" y="305" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
-    <text x="187" y="321" font-size="12" text-anchor="middle" fill="#e67e22">T1</text>
-    <rect x="220" y="305" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
-    <text x="237" y="321" font-size="12" text-anchor="middle" fill="#e67e22">T2</text>
-    <rect x="270" y="305" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
-    <text x="287" y="321" font-size="12" text-anchor="middle" fill="#e67e22">T3</text>
-    <rect x="320" y="305" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
-    <text x="337" y="321" font-size="12" text-anchor="middle" fill="#e67e22">T4</text>
-    <rect x="370" y="305" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
-    <text x="387" y="321" font-size="12" text-anchor="middle" fill="#e67e22">T5</text>
-    <rect x="420" y="305" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
-    <text x="437" y="321" font-size="12" text-anchor="middle" fill="#e67e22">T6</text>
-    <rect x="470" y="305" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
-    <text x="487" y="321" font-size="12" text-anchor="middle" fill="#e67e22">T7</text>
+  <g id="noncoalesced_access" transform="translate(0,180)">
+    <rect x="0" y="0" width="560" height="200" fill="#fdebd0" stroke="#e67e22" stroke-width="1.5" rx="10"/>
+    <text x="20" y="25" font-size="18" font-weight="bold" fill="black">Non-coalesced Access (Inefficient)</text>
+    <text x="20" y="48" font-size="18" fill="#555">Threads access non-adjacent memory addresses,</text>
+    <text x="20" y="68" font-size="18" fill="#555">causing multiple transactions</text>
+    <g>
+      <rect x="90" y="75" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
+      <text x="107" y="91" font-size="12" text-anchor="middle" fill="#e67e22">T0</text>
+      <rect x="140" y="75" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
+      <text x="157" y="91" font-size="12" text-anchor="middle" fill="#e67e22">T1</text>
+      <rect x="190" y="75" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
+      <text x="207" y="91" font-size="12" text-anchor="middle" fill="#e67e22">T2</text>
+      <rect x="240" y="75" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
+      <text x="257" y="91" font-size="12" text-anchor="middle" fill="#e67e22">T3</text>
+      <rect x="290" y="75" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
+      <text x="307" y="91" font-size="12" text-anchor="middle" fill="#e67e22">T4</text>
+      <rect x="340" y="75" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
+      <text x="357" y="91" font-size="12" text-anchor="middle" fill="#e67e22">T5</text>
+      <rect x="390" y="75" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
+      <text x="407" y="91" font-size="12" text-anchor="middle" fill="#e67e22">T6</text>
+      <rect x="440" y="75" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
+      <text x="457" y="91" font-size="12" text-anchor="middle" fill="#e67e22">T7</text>
+    </g>
+    <g>
+      <rect x="90" y="160" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
+      <text x="107" y="176" font-size="12" text-anchor="middle" fill="#e67e22">0</text>
+      <rect x="140" y="160" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
+      <text x="157" y="176" font-size="12" text-anchor="middle" fill="#e67e22">1</text>
+      <rect x="190" y="160" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
+      <text x="207" y="176" font-size="12" text-anchor="middle" fill="#e67e22">2</text>
+      <rect x="240" y="160" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
+      <text x="257" y="176" font-size="12" text-anchor="middle" fill="#e67e22">3</text>
+      <rect x="290" y="160" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
+      <text x="307" y="176" font-size="12" text-anchor="middle" fill="#e67e22">4</text>
+      <rect x="340" y="160" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
+      <text x="357" y="176" font-size="12" text-anchor="middle" fill="#e67e22">5</text>
+      <rect x="390" y="160" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
+      <text x="407" y="176" font-size="12" text-anchor="middle" fill="#e67e22">6</text>
+      <rect x="440" y="160" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
+      <text x="457" y="176" font-size="12" text-anchor="middle" fill="#e67e22">7</text>
+    </g>
+    <g stroke="#e67e22" stroke-width="2">
+      <line x1="107" y1="97" x2="157" y2="155" marker-end="url(#arrow_orange)"/>
+      <line x1="157" y1="97" x2="307" y2="155" marker-end="url(#arrow_orange)"/>
+      <line x1="207" y1="97" x2="257" y2="155" marker-end="url(#arrow_orange)"/>
+      <line x1="257" y1="97" x2="457" y2="155" marker-end="url(#arrow_orange)"/>
+      <line x1="307" y1="97" x2="357" y2="155" marker-end="url(#arrow_orange)"/>
+      <line x1="357" y1="97" x2="107" y2="155" marker-end="url(#arrow_orange)"/>
+      <line x1="407" y1="97" x2="207" y2="155" marker-end="url(#arrow_orange)"/>
+      <line x1="457" y1="97" x2="407" y2="155" marker-end="url(#arrow_orange)"/>
+    </g>
   </g>
-  <g>
-    <rect x="120" y="390" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/> <text x="137" y="406" font-size="12" text-anchor="middle" fill="#e67e22">0</text> <rect x="170" y="390" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
-    <text x="187" y="406" font-size="12" text-anchor="middle" fill="#e67e22">1</text>
-    <rect x="220" y="390" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
-    <text x="237" y="406" font-size="12" text-anchor="middle" fill="#e67e22">2</text>
-    <rect x="270" y="390" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
-    <text x="287" y="406" font-size="12" text-anchor="middle" fill="#e67e22">3</text>
-    <rect x="320" y="390" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
-    <text x="337" y="406" font-size="12" text-anchor="middle" fill="#e67e22">4</text>
-    <rect x="370" y="390" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
-    <text x="387" y="406" font-size="12" text-anchor="middle" fill="#e67e22">5</text>
-    <rect x="420" y="390" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
-    <text x="437" y="406" font-size="12" text-anchor="middle" fill="#e67e22">6</text>
-    <rect x="470" y="390" width="34" height="22" fill="#fff" stroke="#e67e22" stroke-width="1.2"/>
-    <text x="487" y="406" font-size="12" text-anchor="middle" fill="#e67e22">7</text>
-  </g>
-  <g stroke="#e67e22" stroke-width="2">
-    <line x1="137" y1="327" x2="187" y2="385" marker-end="url(#arrow_orange)"/>
-    <line x1="187" y1="327" x2="337" y2="385" marker-end="url(#arrow_orange)"/>
-    <line x1="237" y1="327" x2="287" y2="385" marker-end="url(#arrow_orange)"/>
-    <line x1="287" y1="327" x2="487" y2="385" marker-end="url(#arrow_orange)"/>
-    <line x1="337" y1="327" x2="387" y2="385" marker-end="url(#arrow_orange)"/>
-    <line x1="387" y1="327" x2="137" y2="385" marker-end="url(#arrow_orange)"/>
-    <line x1="437" y1="327" x2="237" y2="385" marker-end="url(#arrow_orange)"/>
-    <line x1="487" y1="327" x2="437" y2="385" marker-end="url(#arrow_orange)"/>
-  </g>
+
   <defs>
     <marker id="arrow_blue" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L7,3.5 L0,7 Z" fill="#3498db"/>

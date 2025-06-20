@@ -1,165 +1,154 @@
-<svg width="900" height="550" xmlns="http://www.w3.org/2000/svg">
+<svg width="860" height="460" xmlns="http://www.w3.org/2000/svg">
+  <g id="ideal_warp" transform="translate(0,0)">
+    <rect x="0" y="0" width="840" height="170" fill="#e0f2f7" stroke="#3498db" stroke-width="1.5" rx="12"/>
+    <text x="20" y="25" font-size="18" font-weight="bold" fill="black">Ideal Warp Execution (No Divergence)</text>
+    <text x="20" y="50" font-size="18" fill="#555">All threads execute the same instruction simultaneously</text>
 
-  <text x="30" y="40" font-size="26" font-weight="bold" fill="black">Warp Execution Diagram</text>
-
-  <rect x="20" y="60" width="840" height="170" fill="#e0f2f7" stroke="#3498db" stroke-width="1.5" rx="12"/>
-  <text x="40" y="85" font-size="18" font-weight="bold" fill="black">Ideal Warp Execution (No Divergence)</text>
-  <text x="40" y="110" font-size="18" fill="#555">All threads execute the same instruction simultaneously</text>
-
-  <g>
     <g>
-      <rect x="70" y="130" width="74" height="24" fill="#fff" stroke="#3498db" stroke-width="1"/>
-      <text x="107" y="146" font-size="12" text-anchor="middle" fill="#3498db">T0</text>
+      <g>
+        <rect x="50" y="70" width="74" height="24" fill="#fff" stroke="#3498db" stroke-width="1"/>
+        <text x="87" y="86" font-size="12" text-anchor="middle" fill="#3498db">T0</text>
 
-      <rect x="152" y="130" width="74" height="24" fill="#fff" stroke="#3498db" stroke-width="1"/>
-      <text x="189" y="146" font-size="12" text-anchor="middle" fill="#3498db">T1</text>
+        <rect x="132" y="70" width="74" height="24" fill="#fff" stroke="#3498db" stroke-width="1"/>
+        <text x="169" y="86" font-size="12" text-anchor="middle" fill="#3498db">T1</text>
 
-      <rect x="234" y="130" width="74" height="24" fill="#fff" stroke="#3498db" stroke-width="1"/>
-      <text x="271" y="146" font-size="12" text-anchor="middle" fill="#3498db">T2</text>
+        <rect x="214" y="70" width="74" height="24" fill="#fff" stroke="#3498db" stroke-width="1"/>
+        <text x="251" y="86" font-size="12" text-anchor="middle" fill="#3498db">T2</text>
 
-      <rect x="316" y="130" width="74" height="24" fill="#fff" stroke="#3498db" stroke-width="1"/>
-      <text x="353" y="146" font-size="12" text-anchor="middle" fill="#3498db">T3</text>
+        <rect x="296" y="70" width="74" height="24" fill="#fff" stroke="#3498db" stroke-width="1"/>
+        <text x="333" y="86" font-size="12" text-anchor="middle" fill="#3498db">T3</text>
 
-      <rect x="398" y="130" width="74" height="24" fill="#fff" stroke="#3498db" stroke-width="1"/>
-      <text x="435" y="146" font-size="12" text-anchor="middle" fill="#3498db">T4</text>
+        <rect x="378" y="70" width="74" height="24" fill="#fff" stroke="#3498db" stroke-width="1"/>
+        <text x="415" y="86" font-size="12" text-anchor="middle" fill="#3498db">T4</text>
 
-      <rect x="480" y="130" width="74" height="24" fill="#fff" stroke="#3498db" stroke-width="1"/>
-      <text x="517" y="146" font-size="12" text-anchor="middle" fill="#3498db">T5</text>
+        <rect x="460" y="70" width="74" height="24" fill="#fff" stroke="#3498db" stroke-width="1"/>
+        <text x="497" y="86" font-size="12" text-anchor="middle" fill="#3498db">T5</text>
 
-      <rect x="562" y="130" width="74" height="24" fill="#fff" stroke="#3498db" stroke-width="1"/>
-      <text x="599" y="146" font-size="12" text-anchor="middle" fill="#3498db">T6</text>
+        <rect x="542" y="70" width="74" height="24" fill="#fff" stroke="#3498db" stroke-width="1"/>
+        <text x="579" y="86" font-size="12" text-anchor="middle" fill="#3498db">T6</text>
 
-      <rect x="644" y="130" width="74" height="24" fill="#fff" stroke="#3498db" stroke-width="1"/>
-      <text x="681" y="146" font-size="12" text-anchor="middle" fill="#3498db">T7</text>
-    </g>
-    <g stroke="#3498db" stroke-width="2">
-      <line x1="107"  x2="107"  y1="154" y2="184" marker-end="url(#arrow_blue)"/>
-      <line x1="189" x2="189" y1="154" y2="184" marker-end="url(#arrow_blue)"/>
-      <line x1="271" x2="271" y1="154" y2="184" marker-end="url(#arrow_blue)"/>
-      <line x1="353" x2="353" y1="154" y2="184" marker-end="url(#arrow_blue)"/>
-      <line x1="435" x2="435" y1="154" y2="184" marker-end="url(#arrow_blue)"/>
-      <line x1="517" x2="517" y1="154" y2="184" marker-end="url(#arrow_blue)"/>
-      <line x1="599" x2="599" y1="154" y2="184" marker-end="url(#arrow_blue)"/>
-      <line x1="681" x2="681" y1="154" y2="184" marker-end="url(#arrow_blue)"/>
+        <rect x="624" y="70" width="74" height="24" fill="#fff" stroke="#3498db" stroke-width="1"/>
+        <text x="661" y="86" font-size="12" text-anchor="middle" fill="#3498db">T7</text>
+      </g>
+      <g stroke="#3498db" stroke-width="2">
+        <line x1="87"  x2="87"  y1="94" y2="124" marker-end="url(#arrow_blue)"/>
+        <line x1="169" x2="169" y1="94" y2="124" marker-end="url(#arrow_blue)"/>
+        <line x1="251" x2="251" y1="94" y2="124" marker-end="url(#arrow_blue)"/>
+        <line x1="333" x2="333" y1="94" y2="124" marker-end="url(#arrow_blue)"/>
+        <line x1="415" x2="415" y1="94" y2="124" marker-end="url(#arrow_blue)"/>
+        <line x1="497" x2="497" y1="94" y2="124" marker-end="url(#arrow_blue)"/>
+        <line x1="579" x2="579" y1="94" y2="124" marker-end="url(#arrow_blue)"/>
+        <line x1="661" x2="661" y1="94" y2="124" marker-end="url(#arrow_blue)"/>
+      </g>
+      <g>
+        <rect x="50" y="130" width="648" height="28" fill="#3498db" stroke="#1478bb" stroke-width="2" rx="7"/>
+        <text x="374" y="150" font-size="15" text-anchor="middle" fill="white" font-weight="bold">Instruction A (Common to all threads)</text>
+      </g>
     </g>
     <g>
-      <rect x="70" y="190" width="648" height="30" fill="#3498db" stroke="#1478bb" stroke-width="2" rx="7"/>
-      <text x="394" y="212" font-size="15" text-anchor="middle" fill="white" font-weight="bold">Instruction A (Common to all threads)</text>
+      <line x1="720" y1="60" x2="820" y2="60" stroke="black" stroke-width="1.5"/>
+      <text x="725" y="55" font-size="18" fill="black">Timeline</text>
+      <rect x="720" y="130" width="16" height="28" fill="#3498db" stroke="#1478bb" stroke-width="2" rx="5"/>
+      <text x="728" y="148" font-size="12" text-anchor="middle" fill="white" font-weight="bold">A</text>
     </g>
   </g>
 
-  <rect x="20" y="260" width="840" height="260" fill="#fdebd0" stroke="#e67e22" stroke-width="1.5" rx="12"/>
-  <text x="40" y="290" font-size="18" font-weight="bold" fill="black">When Warp Divergence Occurs</text>
-  <text x="40" y="315" font-size="18" fill="#555">Threads follow different execution paths due to branching, reducing efficiency</text>
+  <g id="warp_divergence" transform="translate(0,190)">
+    <rect x="0" y="0" width="840" height="260" fill="#fdebd0" stroke="#e67e22" stroke-width="1.5" rx="12"/>
+    <text x="20" y="30" font-size="18" font-weight="bold" fill="black">When Warp Divergence Occurs</text>
+    <text x="20" y="55" font-size="18" fill="#555">Threads follow different execution paths due to branching, reducing efficiency</text>
 
-  <g>
     <g>
-      <rect x="70" y="335" width="74" height="24" fill="#fff" stroke="#e67e22" stroke-width="1"/>
-      <text x="107" y="351" font-size="12" text-anchor="middle" fill="#e67e22">T0</text>
-
-      <rect x="152" y="335" width="74" height="24" fill="#fff" stroke="#e67e22" stroke-width="1"/>
-      <text x="189" y="351" font-size="12" text-anchor="middle" fill="#e67e22">T1</text>
-
-      <rect x="234" y="335" width="74" height="24" fill="#fff" stroke="#e67e22" stroke-width="1"/>
-      <text x="271" y="351" font-size="12" text-anchor="middle" fill="#e67e22">T2</text>
-
-      <rect x="316" y="335" width="74" height="24" fill="#fff" stroke="#e67e22" stroke-width="1"/>
-      <text x="353" y="351" font-size="12" text-anchor="middle" fill="#e67e22">T3</text>
-
-      <rect x="398" y="335" width="74" height="24" fill="#fff" stroke="#e67e22" stroke-width="1"/>
-      <text x="435" y="351" font-size="12" text-anchor="middle" fill="#e67e22">T4</text>
-
-      <rect x="480" y="335" width="74" height="24" fill="#fff" stroke="#e67e22" stroke-width="1"/>
-      <text x="517" y="351" font-size="12" text-anchor="middle" fill="#e67e22">T5</text>
-
-      <rect x="562" y="335" width="74" height="24" fill="#fff" stroke="#e67e22" stroke-width="1"/>
-      <text x="599" y="351" font-size="12" text-anchor="middle" fill="#e67e22">T6</text>
-
-      <rect x="644" y="335" width="74" height="24" fill="#fff" stroke="#e67e22" stroke-width="1"/>
-      <text x="681" y="351" font-size="12" text-anchor="middle" fill="#e67e22">T7</text>
-    </g>
-    <g stroke="#e6a700" stroke-width="2">
-      <line x1="107"  x2="107"  y1="359" y2="372" marker-end="url(#arrow_yellow)"/>
-      <line x1="189" x2="189" y1="359" y2="372" marker-end="url(#arrow_yellow)"/>
-      <line x1="271" x2="271" y1="359" y2="372" marker-end="url(#arrow_yellow)"/>
-      <line x1="353" x2="353" y1="359" y2="372" marker-end="url(#arrow_yellow)"/>
-    </g>
-    <g stroke="#888" stroke-width="1.5" stroke-dasharray="4,4">
-      <line x1="435" x2="435" y1="359" y2="372"/>
-      <line x1="517" x2="517" y1="359" y2="372"/>
-      <line x1="599" x2="599" y1="359" y2="372"/>
-      <line x1="681" x2="681" y1="359" y2="372"/>
-    </g>
-    <g>
-      <rect x="70" y="380" width="320" height="28" fill="#e6a700" stroke="#c68700" stroke-width="2" rx="7"/>
-      <text x="226" y="400" font-size="15" text-anchor="middle" fill="white" font-weight="bold">Instruction B (Branch taken by T0–T3)</text>
-      <g stroke="#c68700" stroke-width="2">
-        <line x1="107" y1="375" x2="107" y2="380"/>
-        <line x1="189" y1="375" x2="189" y2="380"/>
-        <line x1="271" y1="375" x2="271" y2="380"/>
-        <line x1="353" y1="375" x2="353" y2="380"/>
-      </g>
       <g>
-        <rect x="398" y="380" width="320" height="28" fill="#fff" stroke="#888" stroke-width="2" rx="7" opacity="0.4"/>
-        <text x="560" y="400" font-size="14" text-anchor="middle" fill="#888" font-style="italic">Waiting</text>
+        <rect x="50" y="75" width="74" height="24" fill="#fff" stroke="#e67e22" stroke-width="1"/>
+        <text x="87" y="91" font-size="12" text-anchor="middle" fill="#e67e22">T0</text>
+
+        <rect x="132" y="75" width="74" height="24" fill="#fff" stroke="#e67e22" stroke-width="1"/>
+        <text x="169" y="91" font-size="12" text-anchor="middle" fill="#e67e22">T1</text>
+
+        <rect x="214" y="75" width="74" height="24" fill="#fff" stroke="#e67e22" stroke-width="1"/>
+        <text x="251" y="91" font-size="12" text-anchor="middle" fill="#e67e22">T2</text>
+
+        <rect x="296" y="75" width="74" height="24" fill="#fff" stroke="#e67e22" stroke-width="1"/>
+        <text x="333" y="91" font-size="12" text-anchor="middle" fill="#e67e22">T3</text>
+
+        <rect x="378" y="75" width="74" height="24" fill="#fff" stroke="#e67e22" stroke-width="1"/>
+        <text x="415" y="91" font-size="12" text-anchor="middle" fill="#e67e22">T4</text>
+
+        <rect x="460" y="75" width="74" height="24" fill="#fff" stroke="#e67e22" stroke-width="1"/>
+        <text x="497" y="91" font-size="12" text-anchor="middle" fill="#e67e22">T5</text>
+
+        <rect x="542" y="75" width="74" height="24" fill="#fff" stroke="#e67e22" stroke-width="1"/>
+        <text x="579" y="91" font-size="12" text-anchor="middle" fill="#e67e22">T6</text>
+
+        <rect x="624" y="75" width="74" height="24" fill="#fff" stroke="#e67e22" stroke-width="1"/>
+        <text x="661" y="91" font-size="12" text-anchor="middle" fill="#e67e22">T7</text>
+      </g>
+      <g stroke="#e6a700" stroke-width="2">
+        <line x1="87"  x2="87"  y1="99" y2="112" marker-end="url(#arrow_yellow)"/>
+        <line x1="169" x2="169" y1="99" y2="112" marker-end="url(#arrow_yellow)"/>
+        <line x1="251" x2="251" y1="99" y2="112" marker-end="url(#arrow_yellow)"/>
+        <line x1="333" x2="333" y1="99" y2="112" marker-end="url(#arrow_yellow)"/>
       </g>
       <g stroke="#888" stroke-width="1.5" stroke-dasharray="4,4">
-        <line x1="435" x2="435" y1="375" y2="380"/>
-        <line x1="517" x2="517" y1="375" y2="380"/>
-        <line x1="599" x2="599" y1="375" y2="380"/>
-        <line x1="681" x2="681" y1="375" y2="380"/>
-      </g>
-    </g>
-    <g>
-      <rect x="398" y="430" width="320" height="28" fill="#6ab04c" stroke="#4a8c2c" stroke-width="2" rx="7"/>
-      <text x="554" y="450" font-size="15" text-anchor="middle" fill="white" font-weight="bold">Instruction C (Branch taken by T4–T7)</text>
-      <g stroke="#4a8c2c" stroke-width="2">
-        <line x1="435" x2="435" y1="408" y2="424" marker-end="url(#arrow_green)"/>
-        <line x1="517" x2="517" y1="408" y2="424" marker-end="url(#arrow_green)"/>
-        <line x1="599" x2="599" y1="408" y2="424" marker-end="url(#arrow_green)"/>
-        <line x1="681" x2="681" y1="408" y2="424" marker-end="url(#arrow_green)"/>
+        <line x1="415" x2="415" y1="99" y2="120"/>
+        <line x1="497" x2="497" y1="99" y2="120"/>
+        <line x1="579" x2="579" y1="99" y2="120"/>
+        <line x1="661" x2="661" y1="99" y2="120"/>
       </g>
       <g>
-        <rect x="70" y="430" width="320" height="28" fill="#fff" stroke="#888" stroke-width="2" rx="7" opacity="0.4"/>
-        <text x="230" y="450" font-size="14" text-anchor="middle" fill="#888" font-style="italic">Waiting</text>
+        <rect x="50" y="120" width="320" height="28" fill="#e6a700" stroke="#c68700" stroke-width="2" rx="7"/>
+        <text x="206" y="140" font-size="15" text-anchor="middle" fill="white" font-weight="bold">Instruction B (Branch taken by T0–T3)</text>
+        <g>
+          <rect x="378" y="120" width="320" height="28" fill="#fff" stroke="#888" stroke-width="2" rx="7" opacity="0.4"/>
+          <text x="540" y="140" font-size="14" text-anchor="middle" fill="#888" font-style="italic">Waiting</text>
+        </g>
       </g>
-      <g stroke="#888" stroke-width="1.5" stroke-dasharray="4,4">
-        <line x1="107" y1="408" x2="107" y2="430"/>
-        <line x1="189" y1="408" x2="189" y2="430"/>
-        <line x1="271" y1="408" x2="271" y2="430"/>
-        <line x1="353" y1="408" x2="353" y2="430"/>
+      <g>
+        <rect x="378" y="170" width="320" height="28" fill="#6ab04c" stroke="#4a8c2c" stroke-width="2" rx="7"/>
+        <text x="534" y="190" font-size="15" text-anchor="middle" fill="white" font-weight="bold">Instruction C (Branch taken by T4–T7)</text>
+        <g stroke="#4a8c2c" stroke-width="2">
+          <line x1="415" x2="415" y1="148" y2="164" marker-end="url(#arrow_green)"/>
+          <line x1="497" x2="497" y1="148" y2="164" marker-end="url(#arrow_green)"/>
+          <line x1="579" x2="579" y1="148" y2="164" marker-end="url(#arrow_green)"/>
+          <line x1="661" x2="661" y1="148" y2="164" marker-end="url(#arrow_green)"/>
+        </g>
+        <g>
+          <rect x="50" y="170" width="320" height="28" fill="#fff" stroke="#888" stroke-width="2" rx="7" opacity="0.4"/>
+          <text x="210" y="190" font-size="14" text-anchor="middle" fill="#888" font-style="italic">Waiting</text>
+        </g>
+        <g stroke="#888" stroke-width="1.5" stroke-dasharray="4,4">
+          <line x1="87" y1="148" x2="87" y2="170"/>
+          <line x1="169" y1="148" x2="169" y2="170"/>
+          <line x1="251" y1="148" x2="251" y2="170"/>
+          <line x1="333" y1="148" x2="333" y2="170"/>
+        </g>
+      </g>
+      <g>
+        <rect x="50" y="220" width="648" height="28" fill="#e67e22" stroke="#c65e02" stroke-width="2" rx="7"/>
+        <text x="374" y="240" font-size="15" text-anchor="middle" fill="white" font-weight="bold">Instruction D (Convergence: All threads)</text>
+        <g stroke="#c65e02" stroke-width="2">
+          <line x1="87" y1="198" x2="87" y2="212" marker-end="url(#arrow_orange)"/>
+          <line x1="169" y1="198" x2="169" y2="212" marker-end="url(#arrow_orange)"/>
+          <line x1="251" y1="198" x2="251" y2="212" marker-end="url(#arrow_orange)"/>
+          <line x1="333" y1="198" x2="333" y2="212" marker-end="url(#arrow_orange)"/>
+          <line x1="415" y1="198" x2="415" y2="212" marker-end="url(#arrow_orange)"/>
+          <line x1="497" y1="198" x2="497" y2="212" marker-end="url(#arrow_orange)"/>
+          <line x1="579" y1="198" x2="579" y2="212" marker-end="url(#arrow_orange)"/>
+          <line x1="661" y1="198" x2="661" y2="212" marker-end="url(#arrow_orange)"/>
+        </g>
       </g>
     </g>
     <g>
-      <rect x="70" y="480" width="648" height="28" fill="#e67e22" stroke="#c65e02" stroke-width="2" rx="7"/>
-      <text x="394" y="500" font-size="15" text-anchor="middle" fill="white" font-weight="bold">Instruction D (Convergence: All threads)</text>
-      <g stroke="#c65e02" stroke-width="2">
-        <line x1="107" y1="458" x2="107" y2="472" marker-end="url(#arrow_orange)"/>
-        <line x1="189" y1="458" x2="189" y2="472" marker-end="url(#arrow_orange)"/>
-        <line x1="271" y1="458" x2="271" y2="472" marker-end="url(#arrow_orange)"/>
-        <line x1="353" y1="458" x2="353" y2="472" marker-end="url(#arrow_orange)"/>
-        <line x1="435" y1="458" x2="435" y2="472" marker-end="url(#arrow_orange)"/>
-        <line x1="517" y1="458" x2="517" y2="472" marker-end="url(#arrow_orange)"/>
-        <line x1="599" y1="458" x2="599" y2="472" marker-end="url(#arrow_orange)"/>
-        <line x1="681" y1="458" x2="681" y2="472" marker-end="url(#arrow_orange)"/>
-      </g>
+      <line x1="720" y1="60" x2="820" y2="60" stroke="black" stroke-width="1.5"/>
+      <text x="725" y="55" font-size="18" fill="black">Timeline</text>
+      <rect x="720" y="120" width="16" height="28" fill="#e6a700" stroke="#e67e22" stroke-width="2" rx="5"/>
+      <text x="728" y="138" font-size="12" text-anchor="middle" fill="white" font-weight="bold">B</text>
+      <rect x="720" y="170" width="16" height="28" fill="#6ab04c" stroke="#4a8c2c" stroke-width="2" rx="5"/>
+      <text x="728" y="188" font-size="12" text-anchor="middle" fill="white" font-weight="bold">C</text>
+      <rect x="720" y="220" width="16" height="28" fill="#e67e22" stroke="#c65e02" stroke-width="2" rx="5"/>
+      <text x="728" y="238" font-size="12" text-anchor="middle" fill="white" font-weight="bold">D</text>
     </g>
-  </g>
-
-  <g>
-    <line x1="740" y1="120" x2="840" y2="120" stroke="#888" stroke-width="1.5"/>
-    <text x="745" y="115" font-size="18" fill="#888">Timeline</text>
-    <rect x="740" y="190" width="16" height="30" fill="#3498db" stroke="none"/>
-    <text x="748" y="210" font-size="12" text-anchor="middle" fill="white">A</text>
-
-    <line x1="740" y1="330" x2="840" y2="330" stroke="#888" stroke-width="1.5"/>
-    <text x="745" y="325" font-size="18" fill="#888">Timeline</text>
-    <rect x="740" y="380" width="16" height="28" fill="#e6a700" stroke="none"/>
-    <text x="748" y="398" font-size="12" text-anchor="middle" fill="white">B</text>
-    <rect x="740" y="430" width="16" height="28" fill="#6ab04c" stroke="none"/>
-    <text x="748" y="448" font-size="12" text-anchor="middle" fill="white">C</text>
-    <rect x="740" y="480" width="16" height="28" fill="#e67e22" stroke="none"/>
-    <text x="748" y="498" font-size="12" text-anchor="middle" fill="white">D</text>
   </g>
 
   <defs>
