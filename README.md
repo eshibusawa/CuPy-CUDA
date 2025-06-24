@@ -12,6 +12,9 @@ Before working through the notebooks, we recommend reviewing the following suppl
 * [Supplement: Introduction to Basic and Advanced Parallel Computation Patterns](./00_basic_and_advanced_parallel_computation_patterns.md)
   (Provides an overview of four fundamental parallel patterns—map, stencil, reduction, and scan—and explains their classification as "basic" or "advanced.")
 
+* [Supplement: Why and When to Use JIT vs. AOT](./00_why_and_when_to_use_jit.md)
+  (Compares Just-In-Time (JIT) CUDA development with CuPy to Ahead-Of-Time (AOT) development using CUDA/C++ and CMake, helping readers understand CuPy's strengths and decide when each method is most appropriate for their GPU programming tasks.)
+
 These supplements are intended to provide foundational background, helping you understand the structure and objectives of each notebook more effectively.
 
 # Notebooks

@@ -1,0 +1,61 @@
+@startuml
+skinparam shadowing true
+skinparam activity {
+  BackgroundColor #e0f2f7
+  BorderColor #3498db
+  FontColor black
+}
+
+skinparam partition {
+  BackgroundColor #e0f2f7
+  BorderColor #3498db
+  FontColor black
+}
+
+skinparam arrow {
+  Color #3498db
+}
+
+skinparam activityDiamond {
+  BackgroundColor #fdebd0
+  BorderColor #e67e22
+  FontColor black
+}
+
+|developer|
+start
+
+repeat
+  partition "development" {
+    :c++ / cuda source code;
+  }
+  #3498db:<color:white>run cmake;
+
+  |CMake system|
+  #3498db:<color:white>generate project files;
+
+  |developer|
+  #3498db:<color:white>run build;
+
+  |NVCC build system|
+  #3498db:<color:white>compile CUDA code;
+  #3498db:<color:white>link CUDA code;
+  if (build fail?) then (Yes)
+    |developer|
+    :fix errors;
+    detach
+  else (No)
+    |NVCC build system|
+    #3498db:<color:white>generate application;
+    |developer|
+    partition "runtime" {
+        :run application;
+        :observe behavior;
+    }
+  endif
+backward:perform tuning;
+repeat while (tuning / fix complete?) is (No) not (Yes)
+
+:deploy;
+end
+@enduml

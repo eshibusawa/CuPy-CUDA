@@ -1,0 +1,66 @@
+@startuml
+skinparam shadowing true
+skinparam activity {
+  BackgroundColor #e0f2f7
+  BorderColor #3498db
+  FontColor black
+}
+
+skinparam partition {
+  BackgroundColor #e0f2f7
+  BorderColor #3498db
+  FontColor black
+}
+
+skinparam arrow {
+  Color #3498db
+}
+
+skinparam activityDiamond {
+  BackgroundColor #fdebd0
+  BorderColor #e67e22
+  FontColor black
+}
+
+|developer|
+start
+repeat
+  partition "development" {
+    :python / cuda source code;
+  }
+  :run interpreter / application;
+
+  |python interpreter|
+#6ab04c:<color:white>load python code;
+    -[#4a8c2c]->
+#6ab04c:<color:white>load CUDA code as string;
+  -[#4a8c2c]-> .cu / .cuh (string);
+
+  |CuPy backend|
+  #6ab04c:<color:white>compile CUDA code;
+  -[#4a8c2c]->
+
+  if (JIT error?) then (Yes)
+    |developer|
+    :fix errors;
+    detach
+  else (No)
+    -[#4a8c2c]->
+    |CuPy backend|
+    #6ab04c:<color:white>link CUDA code;
+    -[#4a8c2c]->
+    |python interpreter|
+    #6ab04c:<color:white>call CUDA kernal;
+    -[#4a8c2c]->
+    |developer|
+    partition "runtime" {
+        :observe behavior;
+    }
+  endif
+
+backward:perform tuning;
+repeat while (tuning / fix complete?) is (No) not (Yes)
+
+:deploy;
+end
+@enduml
