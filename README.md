@@ -3,8 +3,8 @@
 This repository provides a series of Jupyter notebooks designed to help you get started with CUDA programming using CuPy.
 Each notebook progressively introduces core CUDA concepts and demonstrates their practical application with CuPy's intuitive interface.
 
-## Before you begin:
-Before working through the notebooks, we recommend reviewing the following supplemental materials if you are unfamiliar with CUDA and parallel computation patterns itself:
+## Before Starting:
+Before working through the notebooks, reviewing the following supplemental materials is recommended if one is unfamiliar with CUDA and parallel computation patterns:
 
 * [Supplement: Introduction to CUDA Programming and GPU Architecture](./00_cuda_programming_and_gpu_architecture.md)
   (Offers a comprehensive explanation of GPU and CPU architectural differences, the CUDA programming model—including grids, blocks, threads, and warps—and the GPU memory hierarchy, providing essential context for understanding and optimizing practical CUDA applications.)
@@ -15,7 +15,7 @@ Before working through the notebooks, we recommend reviewing the following suppl
 * [Supplement: Why and When to Use JIT vs. AOT](./00_why_and_when_to_use_jit.md)
   (Compares Just-In-Time (JIT) CUDA development with CuPy to Ahead-Of-Time (AOT) development using CUDA/C++ and CMake, helping readers understand CuPy's strengths and decide when each method is most appropriate for their GPU programming tasks.)
 
-These supplements are intended to provide foundational background, helping you understand the structure and objectives of each notebook more effectively.
+These supplements are intended to provide foundational background, helping readers understand the structure and objectives of each notebook more effectively.
 
 # Notebooks
 * [01_basic_array_operations.ipynb](./01_basic_array_operations.ipynb)
@@ -34,11 +34,8 @@ These supplements are intended to provide foundational background, helping you u
     This notebook demonstrates Reduction (e.g., vector normalization) and Scan (e.g., prefix sum), highlighting efficient memory access strategies (striped vs. direct loads) essential for GPU performance.
 
 # Appendix: Practical Applications
+The knowledge acquired from these notebooks is directly applicable to a wide range of real-world, high-performance computing problems.
 
-You might be wondering what you can actually build with the knowledge gained from these notebooks.
-The skills you'll acquire are directly applicable to a wide range of real-world, high-performance computing problems.
+Mastering Notebooks 01 (Basic Array Operations) and 02 (Basic Texture Sampling) provides the foundational skills for implementing high-speed stereo vision algorithms, such as [JBF-Stereo](https://github.com/eshibusawa/JBF-Stereo) and [VFS](https://github.com/eshibusawa/VFS-Python). These notebooks lay the groundwork for efficient data processing and precise memory access, which are critical for various real-time computer vision tasks.
 
-By mastering just Notebooks 01 (Basic Array Operations) and 02 (Basic Texture Sampling), you'll gain the foundational skills to implement high-speed stereo vision algorithms ([JBF-Stereo](https://github.com/eshibusawa/JBF-Stereo) and [VFS](https://github.com/eshibusawa/VFS-Python)).
-These notebooks lay the groundwork for efficient data processing and precise memory access, which are critical for various real-time computer vision tasks.
-Furthermore, once you understand CUB's powerful prefix sum operations from Notebook 04, you'll be well-equipped to tackle advanced applications like real-time object detection ([Stixel-World](https://github.com/eshibusawa/Stixel-World-Python)), as seen in systems that derive object boundaries from depth information.
-This journey through CuPy, CUDA, and CUB can significantly enhance your ability to develop high-performance solutions.
+Furthermore, an understanding of CUB's powerful prefix sum operations, as demonstrated in Notebook 04, equips users to tackle advanced applications like real-time object detection ([Stixel-World](https://github.com/eshibusawa/Stixel-World-Python)). This is exemplified in systems that derive object boundaries from depth information. The journey through CuPy, CUDA, and CUB significantly enhances the ability to develop high-performance solutions.

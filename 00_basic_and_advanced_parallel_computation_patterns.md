@@ -71,7 +71,7 @@ Reduction is essential for summarizing large datasets and computing global stati
 The scan pattern, also known as prefix sum, is essential to many parallel algorithms that require cumulative information, such as stream compaction, histogram generation, and parallel sorting. As Figures 5 (serial execution) and 6 (parallel execution) show, efficient implementations of scan are crucial for achieving high performance in these applications. This pattern often relies on specialized algorithms and libraries that can manage the inherent data dependencies, sometimes utilizing direct load patterns to ensure data integrity.
 
 ## References
-If you're interested in learning more about parallel computation patterns, we recommend consulting the following resources:
+If readers are interested in learning more about parallel computation patterns, consider these resources:
 
 1.  Rossbach, C. (2020). *Parallel Architectures, Parallel Algorithms, CUDA*. Department of Computer Science, The University of Texas at Austin. Lecture presented in CS378H.
 2.  Kirk, D., & Hwu, W.-m. W. (2007-2012). *GPU Architecture and Parallel Programming: Lecture 11 Parallel Computation Patterns – Parallel Prefix Sum (Scan)*. University of Illinois. Lecture presented in CS/EE 217.
